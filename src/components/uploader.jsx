@@ -35,9 +35,13 @@ export const Uploader = () => {
       setIsLoading(false);
     }
   };
+
   return (
     <section className="space-y-6 mx-auto">
-      <form onSubmit={handleSubmit} className="grid gap-3 mx-auto max-w-sm">
+      <form
+        onSubmit={handleSubmit}
+        className="grid gap-3 mx-auto max-w-sm"
+      >
         <input
           type="file"
           placeholder="Select a file"
@@ -66,6 +70,7 @@ export const Uploader = () => {
       </form>
       {!isLoading && preview && (
         <div className="space-y-3 mx-auto max-w-sm">
+          <h2 className="text-lg font-semibold">Presigned URL</h2>
           <div className="w-full relative">
             <input
               type="text"
@@ -83,13 +88,6 @@ export const Uploader = () => {
               📋
             </button>
           </div>
-          <img
-            src={preview}
-            alt=""
-            width={500}
-            height={500}
-            className="object-cover"
-          />
         </div>
       )}
     </section>
